@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    #@article.user_id = User.find(2).id
     if @article.save
       flash[:success] = "Article was created"
       redirect_to article_path(@article)
